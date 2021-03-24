@@ -11,3 +11,5 @@ interface Dependency
 class AndroidDependency(context: Context) : Dependency
 
 class FakeDependency : Dependency
+
+class SomethingDifferent
