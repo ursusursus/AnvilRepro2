@@ -53,6 +53,12 @@ object SubScopedAndroidModule {
     fun dependency(context: Context): Dependency = AndroidDependency(context)
 }
 
+@Module
+@ContributesTo(SubScope::class)
+object SubScopedRegularAndroidLessModule {
+    fun foo(): Foo = Foo()
+}
+
 @Retention(AnnotationRetention.RUNTIME)
 @Scope
 annotation class SubScope

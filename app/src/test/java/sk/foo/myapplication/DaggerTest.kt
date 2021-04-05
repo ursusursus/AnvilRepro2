@@ -14,10 +14,15 @@ class DaggerTest {
     @Test
     fun fooTest() {
         val appComponent = DaggerTestAppComponent.factory().create()
-        val subScopedComponent = (appComponent as TestSubScopedComponent.ParentComponent).testSubScopedComponentFactory.create()
-        val dependency = subScopedComponent.dependency
+        val subScopedComponent = (appComponent as TestSubScopedComponent.ParentComponent)
+            .testSubScopedComponentFactory.create()
 
+        val dependency = subScopedComponent.dependency
         println("dep=$dependency")
+
+        val foo = subScopedComponent.foo
+        println("foo=$foo")
+
         Assert.assertTrue(true)
     }
 }
@@ -33,9 +38,10 @@ interface TestAppComponent {
 }
 
 @SubScope
-@MergeSubcomponent(SubScope::class, exclude = [FakeSubScopeModule::class])
+@MergeSubcomponent(SubScope::class, exclude = [SubScopedAndroidModule::class])
 interface TestSubScopedComponent {
     val dependency: Dependency
+    val foo: Foo
 
     @ContributesTo(AppScope::class)
     interface ParentComponent {
