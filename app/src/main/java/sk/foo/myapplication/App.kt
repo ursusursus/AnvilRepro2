@@ -1,6 +1,7 @@
 package sk.foo.myapplication
 
 import android.app.Application
+import android.util.Log
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
