@@ -7,6 +7,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import sk.foo.scopes.AppScope
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)

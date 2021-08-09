@@ -1,4 +1,4 @@
-package sk.foo.myapplication
+package sk.foo.scopes
 
 import javax.inject.Scope
 
@@ -13,3 +13,7 @@ annotation class AppScope
 @Retention(AnnotationRetention.RUNTIME)
 @Scope
 annotation class SubScope
+
+@Retention(AnnotationRetention.RUNTIME)
+@Scope
+annotation class LibraryScope

@@ -6,6 +6,8 @@ import com.squareup.anvil.annotations.MergeSubcomponent
 import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
+import sk.foo.scopes.AppScope
+import sk.foo.scopes.SubScope
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
