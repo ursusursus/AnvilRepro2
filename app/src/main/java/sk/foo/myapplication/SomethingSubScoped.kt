@@ -10,7 +10,3 @@ interface SomethingAppScoped
 
 class AndroidSomethingAppScoped(context: Context) : SomethingAppScoped
 
-interface SomethingSubScoped
-
-class AndroidSomethingSubScoped(context: Context) : SomethingSubScoped
-

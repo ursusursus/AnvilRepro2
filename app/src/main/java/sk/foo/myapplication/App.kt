@@ -2,7 +2,7 @@ package sk.foo.myapplication
 
 import android.app.Application
 import android.util.Log
-import sk.foo.lib.LibraryParentComponent
+import sk.foo.lib2.FooLibaryComponent
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
@@ -11,9 +11,9 @@ import sk.foo.lib.LibraryParentComponent
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
+        Log.d("Default", "App # onCreate")
         val appComponent = DaggerAppComponent.factory().create(this)
-        val libraryComponent = (appComponent as LibraryParentComponent).libraryComponentFactory.create()
-        Log.d("Default", "somethingLibrary=${libraryComponent.somethingLibrary}")
-        Log.d("Default", "somethingLibrary2=${libraryComponent.somethingLibrary}")
+        val libraryComponent = (appComponent.libraryComponentFactory.create() as FooLibaryComponent)
+        Log.d("Default", "somethingLibrary2=${libraryComponent.somethingLibrary2}")
     }
 }

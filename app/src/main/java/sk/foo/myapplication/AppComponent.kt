@@ -7,6 +7,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import sk.foo.lib.LibraryComponent
 import sk.foo.scopes.AppScope
 
 /**
@@ -16,6 +17,8 @@ import sk.foo.scopes.AppScope
 @AppScope
 @MergeComponent(AppScope::class)
 interface AppComponent {
+    val libraryComponentFactory: LibraryComponent.Factory
+
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent

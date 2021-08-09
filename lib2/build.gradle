@@ -7,6 +7,5 @@ anvil {
 
 dependencies {
     implementation "com.google.dagger:dagger:2.37"
-    // implementation project(":lib2")
     implementation project(":scopes")
 }
